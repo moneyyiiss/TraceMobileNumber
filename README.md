@@ -7,23 +7,22 @@ This Python project allows users to trace the current location, carrier, and tim
 
 Code Explanation:
 
-Import necessary libraries and modules:
-
+1. Import necessary libraries and modules:
 phonenumbers: A Python library to parse, validate, and manipulate phone numbers.
 timezone, geocoder, and carrier modules from phonenumbers: These modules provide functions to retrieve timezone, geographic region, and carrier information for a given phone number, respectively.
-Get user input for the phone number:
 
+2. Get user input for the phone number:
 number = input("Enter Your No. with +__: "): Prompt the user to enter their phone number, including the country code (e.g., +1 for the United States).
-Parse the phone number:
 
+3. Parse the phone number:
 phone = phonenumbers.parse(number): Parse the user input and create a PhoneNumber object that can be used to extract further information.
-Extract timezone, carrier, and location information:
 
+4. Extract timezone, carrier, and location information:
 time = timezone.time_zones_for_number(phone): Get the timezone(s) associated with the phone number.
 car = carrier.name_for_number(phone, "en"): Get the carrier's name for the phone number in English.
 reg = geocoder.description_for_number(phone, "en"): Get the location description (geographic region) associated with the phone number in English.
-Print the extracted information:
 
+5. Print the extracted information:
 print(phone): Print the parsed phone number.
 print(time): Print the timezone information.
 print(car): Print the carrier's name.
